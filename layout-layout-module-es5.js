@@ -73355,9 +73355,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         path: 'borrowers',
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
+          return Promise.all(
           /*! import() | borrowers-borrowers-module */
-          "borrowers-borrowers-module").then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~borrowers-borrowers-module~emailpanel-emailpanel-module"), __webpack_require__.e("borrowers-borrowers-module")]).then(__webpack_require__.bind(null,
           /*! ./borrowers/borrowers.module */
           "./src/app/layout/borrowers/borrowers.module.ts")).then(function (m) {
             return m.BorrowersModule;
@@ -73366,9 +73366,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         path: 'email-panel',
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
+          return Promise.all(
           /*! import() | emailpanel-emailpanel-module */
-          "emailpanel-emailpanel-module").then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~borrowers-borrowers-module~emailpanel-emailpanel-module"), __webpack_require__.e("emailpanel-emailpanel-module")]).then(__webpack_require__.bind(null,
           /*! ./emailpanel/emailpanel.module */
           "./src/app/layout/emailpanel/emailpanel.module.ts")).then(function (m) {
             return m.EmailpanelModule;

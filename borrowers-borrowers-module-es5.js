@@ -1,3 +1,7 @@
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -24802,6 +24806,233 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./node_modules/jspdf-html2canvas/dist/js-pdf.min.js":
+  /*!***********************************************************!*\
+    !*** ./node_modules/jspdf-html2canvas/dist/js-pdf.min.js ***!
+    \***********************************************************/
+
+  /*! no static exports found */
+
+  /***/
+  function node_modulesJspdfHtml2canvasDistJsPdfMinJs(module, exports, __webpack_require__) {
+    !function (e, t) {
+      true ? module.exports = t(__webpack_require__(
+      /*! jspdf */
+      "./node_modules/jspdf/dist/jspdf.es.min.js"), __webpack_require__(
+      /*! html2canvas */
+      "./node_modules/html2canvas/dist/html2canvas.js")) : undefined;
+    }(window, function (e, t) {
+      return function (e) {
+        var t = {};
+
+        function n(o) {
+          if (t[o]) return t[o].exports;
+          var i = t[o] = {
+            i: o,
+            l: !1,
+            exports: {}
+          };
+          return e[o].call(i.exports, i, i.exports, n), i.l = !0, i.exports;
+        }
+
+        return n.m = e, n.c = t, n.d = function (e, t, o) {
+          n.o(e, t) || Object.defineProperty(e, t, {
+            enumerable: !0,
+            get: o
+          });
+        }, n.r = function (e) {
+          "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, {
+            value: "Module"
+          }), Object.defineProperty(e, "__esModule", {
+            value: !0
+          });
+        }, n.t = function (e, t) {
+          if (1 & t && (e = n(e)), 8 & t) return e;
+          if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+          var o = Object.create(null);
+          if (n.r(o), Object.defineProperty(o, "default", {
+            enumerable: !0,
+            value: e
+          }), 2 & t && "string" != typeof e) for (var i in e) {
+            n.d(o, i, function (t) {
+              return e[t];
+            }.bind(null, i));
+          }
+          return o;
+        }, n.n = function (e) {
+          var t = e && e.__esModule ? function () {
+            return e["default"];
+          } : function () {
+            return e;
+          };
+          return n.d(t, "a", t), t;
+        }, n.o = function (e, t) {
+          return Object.prototype.hasOwnProperty.call(e, t);
+        }, n.p = "", n(n.s = 0);
+      }([function (e, t, n) {
+        var o = n(1),
+            i = n(2),
+            _n2 = n(3),
+            r = _n2.defaultOpts,
+            a = o.jsPDF,
+            p = function p(e) {
+          return {
+            "image/jpeg": "JPEG",
+            "image/png": "PNG",
+            "image/webp": "WEBP"
+          }[e];
+        };
+
+        function f(e, t, n) {
+          var o = t.pdf,
+              i = t.pdfWidth,
+              r = t.pdfHeight,
+              a = t.position;
+
+          var _ref4 = function (_ref5) {
+            var e = _ref5.canvas,
+                t = _ref5.pdf,
+                n = _ref5.pdfWidth,
+                o = _ref5.opts;
+            var i = e.toDataURL(o.imageType, 1),
+                r = t.getImageProperties(i);
+            return {
+              pageData: i,
+              imgHeight: n / r.width * r.height
+            };
+          }({
+            canvas: e,
+            pdf: o,
+            pdfWidth: i,
+            opts: n
+          }),
+              f = _ref4.pageData,
+              u = _ref4.imgHeight;
+
+          var s = u;
+          if (a < 0 && (o.addPage(), a = 0), s < r) o.addImage(f, p(n.imageType), 0, a, i, u), a -= s;else for (; s > 0;) {
+            o.addImage(f, p(n.imageType), 0, a, i, u), s -= r, a -= r, s > 0 && o.addPage();
+          }
+          return {
+            pdf: o,
+            position: a
+          };
+        }
+
+        e.exports = /*#__PURE__*/function () {
+          var _ref6 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(e) {
+            var t,
+                n,
+                _o,
+                _r,
+                _f,
+                _a2,
+                _p,
+                _args = arguments;
+
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    t = _args.length > 1 && _args[1] !== undefined ? _args[1] : {};
+
+                    n = function (e) {
+                      var t = new a(e.jsPDF),
+                          n = t.internal.pageSize.getWidth(),
+                          o = t.internal.pageSize.getHeight();
+                      return {
+                        pdf: t,
+                        pdfWidth: n,
+                        pdfHeight: o,
+                        position: 0
+                      };
+                    }(t = Object.assign(r, t));
+
+                    if (!e.length) {
+                      _context.next = 17;
+                      break;
+                    }
+
+                    _o = 0;
+
+                  case 4:
+                    if (!(_o < e.length)) {
+                      _context.next = 15;
+                      break;
+                    }
+
+                    _context.next = 7;
+                    return i(e[_o], t.html2canvas);
+
+                  case 7:
+                    _r = _context.sent;
+                    _f = f(_r, n, t);
+                    _a2 = _f.pdf;
+                    _p = _f.position;
+                    n.pdf = _a2, n.position = _p;
+
+                  case 12:
+                    _o++;
+                    _context.next = 4;
+                    break;
+
+                  case 15:
+                    _context.next = 24;
+                    break;
+
+                  case 17:
+                    _context.t0 = f;
+                    _context.next = 20;
+                    return i(e, t.html2canvas);
+
+                  case 20:
+                    _context.t1 = _context.sent;
+                    _context.t2 = n;
+                    _context.t3 = t;
+                    (0, _context.t0)(_context.t1, _context.t2, _context.t3);
+
+                  case 24:
+                    t.success(n.pdf);
+
+                  case 25:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee);
+          }));
+
+          return function (_x) {
+            return _ref6.apply(this, arguments);
+          };
+        }();
+      }, function (t, n) {
+        t.exports = e;
+      }, function (e, n) {
+        e.exports = t;
+      }, function (e, t) {
+        e.exports.defaultOpts = {
+          jsPDF: {
+            unit: "px",
+            format: "a4"
+          },
+          html2canvas: {
+            imageTimeout: 15e3,
+            logging: !0,
+            useCORS: !1
+          },
+          imageType: "image/jpeg",
+          output: "js.pdf",
+          success: function success(e) {
+            e.save(this.output);
+          }
+        };
+      }]);
+    });
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/layout/borrowers/addborrowers/addborrowers.component.html":
   /*!*****************************************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/layout/borrowers/addborrowers/addborrowers.component.html ***!
@@ -24857,7 +25088,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n        <!-- Begin Page Content -->\n        <div class=\"container-fluid\">\n\n            <!-- Page Heading -->\n            <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n                <h1 class=\"h3 mb-0 text-gray-800 page-title\">List of Borrowers<span>Control Pannel</span></h1>\n                <ol class=\"breadcrumb text-xs bg-transparent\">\n                    <li><i class=\"fas fa-fw fa-tachometer-alt\"></i><a href=\"#\" class=\"text-gray-700\">Home</a><i class=\"fas fa-fw fa-angle-right\"></i></li>\n                    <li><a href=\"#\" class=\"text-gray-700\">Borrowers</a><i class=\"fas fa-fw fa-angle-right\"></i></li>\n                    <li class=\"active text-gray-500\">List</li>\n                </ol>\n            </div>\n\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    <!-- DataTales Example -->\n                    <div class=\"bg-white shadow border-top-green mb-4\">\n                        <div class=\"card-body\">\n                            <mat-tab-group>\n                                <mat-tab label=\"Personel Information\">\n                                    <form class=\"user\">\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right\"><label>Your Image {{ imagename }}</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"file\" [(ngModel)]=\"imagename\" name=\"message\" class=\"form-control form-control-user border-0\" />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Account Number</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" [(ngModel)]=\"account\" name=\"account\" placeholder=\"Account Number\" class=\"form-control form-control-user\" />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Full Name </label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" minlength=\"4\" maxlength=\"24\" [(ngModel)]=\"firstname\" name=\"firstname\" placeholder=\"Full Name\" class=\"form-control form-control-user\" required/>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Last Name </label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" minlength=\"4\" maxlength=\"24\" [(ngModel)]=\"lastnamename\" name=\"message\" placeholder=\"Last Name\" class=\"form-control form-control-user\" required/>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Email</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"email\" [(ngModel)]=\"emailname\" name=\"email\" email placeholder=\"Email\" class=\"form-control form-control-user\" required />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Mobile Number</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" [(ngModel)]=\"phone\" name=\"phone\" placeholder=\"Mobile Number\" class=\"form-control form-control-user\" />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Address 1</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <textarea class=\"form-control\" name=\"message\" [(ngModel)]=\"textarea\" style=\"height: 100px;\"></textarea>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Address 2</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <textarea class=\"form-control\" name=\"message\" [(ngModel)]=\"textarea1\" style=\"height: 100px;\"></textarea>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>City</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" name=\"text\" [(ngModel)]=\"cityname\" placeholder=\"City\" class=\"form-control form-control-user\" />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>State</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" [(ngModel)]=\"statename\" name=\"state\" placeholder=\"State\" class=\"form-control form-control-user\" />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Zip Code</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" [(ngModel)]=\"zipcode\" name=\"zip\" placeholder=\"Zip Code\" class=\"form-control form-control-user\" />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>State </label></div>\n                                                <div class=\"col-lg-10 \">\n                                                    <select class=\"form-control form-control-user\" name=\"country\" [(ngModel)]=\"Country\" (change)=\"getCountry($event.target.value)\">\n                                              <option *ngFor=\"let ln of Countrys \" [value]=\"ln.id\">{{ln.name}}</option>\n                                              \n                                          </select>\n                                                </div>\n                                            </div>\n                                        </div>\n\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Comment</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <textarea class=\"form-control\" name=\"message\" [(ngModel)]=\"comment\" style=\"height: 100px;\"></textarea>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"row\">\n                                            <div class=\"col-lg-12 text-right\">\n                                                <button type=\"button\" (click)=\"onReset()\" class=\"btn btn-info btn-sm\"><i class=\"fa fa-times pr-2\" aria-hidden=\"true\"></i>Reset</button>\n                                                <button type=\"button\" (click)=\"onSave()\" class=\"btn btn-success btn-sm\"><i class=\"fa fa-save pr-2\" aria-hidden=\"true\"></i>Save</button>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </mat-tab>\n                                <mat-tab label=\"Financial Information\">\n                                    <!-- Editable table -->\n\n                                    <!-- <table class>\n\n                                        <thead>\n                                            <tr>\n\n                                                <th>First Name</th>\n                                                <th>Last Name</th>\n\n                                            </tr>\n                                        </thead>\n\n                                    </table> -->\n                                    <table class=\"table table-bordered table-responsive-md table-striped text-center\">\n\n                                        <tbody>\n\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" flex=\"20\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n\n                                            <!-- This is our clonable table line -->\n\n                                        </tbody>\n\n                                    </table>\n                                    <button mat-button color=\"Warn\">Add Row</button>\n\n\n                                    <button mat-button color=\"Warn\">Delete Row</button>\n                                    <hr>\n                                    <button class=\"example-spacer\" mat-button color=\"primary\">Update Additional Fees</button>\n\n\n                                </mat-tab>\n                                <mat-tab label=\"Attachment\">\n                                    <angular-file-uploader [config]=\"afuConfig\">\n                                    </angular-file-uploader>\n                                </mat-tab>\n                            </mat-tab-group>\n                        </div>\n                    </div>\n\n                </div>\n            </div>\n\n\n\n\n\n\n        </div>\n        <!-- /.container-fluid -->\n\n    </div>\n</div>";
+    __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n        <!-- Begin Page Content -->\n        <div class=\"container-fluid\">\n\n            <!-- Page Heading -->\n            <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n                <h1 class=\"h3 mb-0 text-gray-800 page-title\">List of Borrowers<span>Control Pannel</span></h1>\n                <ol class=\"breadcrumb text-xs bg-transparent\">\n                    <li><i class=\"fas fa-fw fa-tachometer-alt\"></i><a href=\"#\" class=\"text-gray-700\">Home</a><i class=\"fas fa-fw fa-angle-right\"></i></li>\n                    <li><a href=\"#\" class=\"text-gray-700\">Borrowers</a><i class=\"fas fa-fw fa-angle-right\"></i></li>\n                    <li class=\"active text-gray-500\">List</li>\n                </ol>\n            </div>\n\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    <!-- DataTales Example -->\n                    <div class=\"bg-white shadow border-top-green mb-4\">\n                        <div class=\"card-body\">\n                            <mat-tab-group>\n                                <mat-tab label=\"Personel Information\">\n                                    <form class=\"user\">\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right\"><label>Your Image </label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"file\" [(ngModel)]=\"imagename\" name=\"imagename\" class=\"form-control form-control-user border-0\" />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Account Number</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" [(ngModel)]=\"account\" name=\"account\" placeholder=\"Account Number\" class=\"form-control form-control-user\" />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Full Name </label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" minlength=\"4\" maxlength=\"24\" [(ngModel)]=\"firstname\" name=\"firstname\" placeholder=\"Full Name\" class=\"form-control form-control-user\" required/>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Last Name </label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" minlength=\"4\" maxlength=\"24\" [(ngModel)]=\"lastname\" name=\"lastname\" placeholder=\"Last Name\" class=\"form-control form-control-user\" required/>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Email</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"email\" [(ngModel)]=\"emailname\" name=\"emailname\" email placeholder=\"Email\" class=\"form-control form-control-user\" required />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Mobile Number</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" [(ngModel)]=\"phone\" name=\"phone\" placeholder=\"Mobile Number\" class=\"form-control form-control-user\" />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Address 1</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <textarea class=\"form-control\" name=\"textarea\" [(ngModel)]=\"textarea\" style=\"height: 100px;\"></textarea>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Address 2</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <textarea class=\"form-control\" name=\"textarea1\" [(ngModel)]=\"textarea1\" style=\"height: 100px;\"></textarea>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>City</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" name=\"cityname\" [(ngModel)]=\"cityname\" placeholder=\"City\" class=\"form-control form-control-user\" />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>State</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" [(ngModel)]=\"statename\" name=\"statename\" placeholder=\"State\" class=\"form-control form-control-user\" />\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Zip Code</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <input type=\"text\" [(ngModel)]=\"zipcode\" name=\"zipcode\" placeholder=\"Zip Code\" class=\"form-control form-control-user\" />\n                                                </div>\n                                            </div>\n                                        </div>\n\n\n                                        <div class=\"form-group\">\n                                            <div class=\"row\">\n                                                <div class=\"col-lg-2 text-right text-green\"><label>Comment</label></div>\n                                                <div class=\"col-lg-10\">\n                                                    <textarea class=\"form-control\" name=\"comment\" [(ngModel)]=\"comment\" style=\"height: 100px;\"></textarea>\n                                                </div>\n                                            </div>\n                                        </div>\n                                        <div class=\"row\">\n                                            <div class=\"col-lg-12 text-right\">\n\n                                                <button type=\"button\" (click)=\"onUpdate()\" class=\"btn btn-success btn-sm\"><i class=\"fa fa-save pr-2\" aria-hidden=\"true\"></i>Update</button>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </mat-tab>\n                                <mat-tab label=\"Financial Information\">\n                                    <!-- Editable table -->\n\n                                    <!-- <table class>\n\n                                        <thead>\n                                            <tr>\n\n                                                <th>First Name</th>\n                                                <th>Last Name</th>\n\n                                            </tr>\n                                        </thead>\n\n                                    </table> -->\n                                    <table class=\"table table-bordered table-responsive-md table-striped text-center\">\n\n                                        <tbody>\n\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n                                            <tr>\n                                                <th scope=\"row\">\n                                                    <div class=\"form-check\">\n                                                        <input type=\"checkbox\" flex=\"20\" class=\"form-check-input\" id=\"tableMaterialCheck4\">\n                                                        <label class=\"form-check-label\" for=\"tableMaterialCheck4\"></label>\n                                                    </div>\n                                                </th>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">Guerra Cortez</td>\n                                                <td class=\"pt-3-half\" contenteditable=\"true\">USA</td>\n                                            </tr>\n\n                                            <!-- This is our clonable table line -->\n\n                                        </tbody>\n\n                                    </table>\n                                    <button mat-button color=\"Warn\">Add Row</button>\n\n\n                                    <button mat-button color=\"Warn\">Delete Row</button>\n                                    <hr>\n                                    <button class=\"example-spacer\" mat-button color=\"primary\">Update Additional Fees</button>\n\n\n                                </mat-tab>\n                                <mat-tab label=\"Attachment\">\n                                    <angular-file-uploader [config]=\"afuConfig\">\n                                    </angular-file-uploader>\n                                </mat-tab>\n                            </mat-tab-group>\n                        </div>\n                    </div>\n\n                </div>\n            </div>\n\n\n\n\n\n\n        </div>\n        <!-- /.container-fluid -->\n\n    </div>\n</div>";
     /***/
   },
 
@@ -24877,7 +25108,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n        <!-- Begin Page Content -->\n        <div class=\"container-fluid\">\n\n            <!-- Page Heading -->\n            <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n                <h1 class=\"h3 mb-0 text-gray-800 page-title\">List of Borrowers<span>Control Pannel</span></h1>\n                <ol class=\"breadcrumb text-xs bg-transparent\">\n                    <li><i class=\"fas fa-fw fa-tachometer-alt\"></i><a href=\"#\" class=\"text-gray-700\">Home</a><i class=\"fas fa-fw fa-angle-right\"></i></li>\n                    <li><a href=\"#\" class=\"text-gray-700\">Borrowers</a><i class=\"fas fa-fw fa-angle-right\"></i></li>\n                    <li class=\"active text-gray-500\">List</li>\n                </ol>\n            </div>\n\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    <!-- DataTales Example -->\n                    <div class=\"bg-white shadow border-top-green mb-4\">\n                        <div class=\"card-body\">\n                            <div class=\"mb-2\">\n                                <button type=\"button\" class=\"btn btn-warning btn-sm\"><i class=\"fa fa-reply-all pr-2\" aria-hidden=\"true\"></i>Back</button>\n                                <button type=\"button\" class=\"btn btn-danger btn-sm\"><i class=\"fa fa-times pr-2\" aria-hidden=\"true\"></i>Multiple Delete</button>\n                                <button type=\"button\" class=\"btn btn-success btn-sm\"><i class=\"fa fa-plus pr-2\" aria-hidden=\"true\"></i>Add Borrower</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\"><i class=\"fa fa-envelope pr-2\" aria-hidden=\"true\"></i>Send SMS</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\"><i class=\"fa fa-print pr-2\" aria-hidden=\"true\"></i>Print</button>\n                                <button type=\"button\" class=\"btn btn-success btn-sm\"><i class=\"fa fa-paper-plane pr-2\" aria-hidden=\"true\"></i>Export Excel</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\"><i class=\"fa fa-file-pdf pr-2\" aria-hidden=\"true\"></i>Export Pdf</button>\n                            </div>\n                            <hr class=\"mp-4 mt-4\">\n                            <div class=\"table-responsive mt-4\">\n                                <table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">\n                                    <thead>\n                                        <tr>\n                                            <th><input type=\"checkbox\" name=\"\"></th>\n                                            <th>Id</th>\n                                            <th>Image</th>\n                                            <th>First Name</th>\n                                            <th>Last Name</th>\n                                            <th>Email</th>\n                                            <th>Mobile Number</th>\n                                            <th>Status</th>\n                                            <th>Action</th>\n                                        </tr>\n                                    </thead>\n                                    <!-- <tfoot>\n              <tr>\n                <th><input type=\"checkbox\" name=\"\"></th>\n                <th>Id</th>\n                <th>Image</th>\n                <th>First Name</th>\n                <th>Last Name</th>\n                <th>Email</th>\n                <th>Mobile Number</th>\n                <th>Status</th>\n                <th>Action</th>\n              </tr>\n            </tfoot> -->\n                                    <tbody>\n                                        <tr *ngFor=\"let rawdata of borrowerdata\">\n                                            <td><input type=\"checkbox\" #myItem (change)=\"OnCheckboxSelect(rawdata, $event)\" name=\"item-{{rawdata.id}}\"></td>\n                                            <th>{{rawdata._id}}</th>\n                                            <td><img src=\"../../../../assets/images/logo-admin.png\" /></td>\n                                            <td>{{rawdata.firstname}}</td>\n                                            <td>{{rawdata.lastname}}</td>\n                                            <td>{{rawdata.emailname}}</td>\n                                            <td>{{rawdata.phone}}</td>\n                                            <td class=\"bg-danger text-white text-center\"><a href=\"\" class=\"text-white\">{{rawdata.status}}</a></td>\n                                            <td><a routerLink=\"/borrowers/edit/{{rawdata._id}}\" class=\"btn btn-info btn-sm\">Edit</a>\n                                                <button type=\"button\" (click)=\"deleteborrowers(rawdata._id)\" class=\"btn btn-info btn-sm\"><i class=\"fas fa-trash\" style=\"font-size:24px;color:red;display:inline-block;\"></i></button></td>\n                                        </tr>\n                                    </tbody>\n                                </table>\n                            </div>\n                        </div>\n                    </div>\n\n                </div>\n            </div>\n\n\n\n\n\n\n        </div>\n        <!-- /.container-fluid -->\n\n    </div>\n</div>";
+    __webpack_exports__["default"] = "<div class=\"card\">\n    <div class=\"card-body\">\n        <!-- Begin Page Content -->\n        <div class=\"container-fluid\">\n\n            <!-- Page Heading -->\n            <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n                <h1 class=\"h3 mb-0 text-gray-800 page-title\">List of Borrowers<span>Control Pannel</span></h1>\n                <ol class=\"breadcrumb text-xs bg-transparent\">\n                    <li><i class=\"fas fa-fw fa-tachometer-alt\"></i><a href=\"#\" class=\"text-gray-700\">Home</a><i class=\"fas fa-fw fa-angle-right\"></i></li>\n                    <li><a href=\"#\" class=\"text-gray-700\">Borrowers</a><i class=\"fas fa-fw fa-angle-right\"></i></li>\n                    <li class=\"active text-gray-500\">List</li>\n                </ol>\n            </div>\n\n            <div class=\"row\">\n                <div class=\"col-lg-12\">\n                    <!-- DataTales Example -->\n                    <div class=\"bg-white shadow border-top-green mb-4\">\n                        <div class=\"card-body\">\n                            <div class=\"mb-2\">\n                                <button type=\"button\" class=\"btn btn-warning btn-sm\" routerLink=\"/dashboard\"><i class=\"fa fa-reply-all pr-2\" aria-hidden=\"true\"></i>Back</button>\n                                <button type=\"button\" class=\"btn btn-danger btn-sm\"><i class=\"fa fa-times pr-2\" aria-hidden=\"true\"></i>Multiple Delete</button>\n                                <button type=\"button\" routerLink=\"/borrowers/new\" class=\"btn btn-success btn-sm\"><i class=\"fa fa-plus pr-2\" aria-hidden=\"true\"></i>Add Borrower</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\"><i class=\"fa fa-envelope pr-2\" aria-hidden=\"true\"></i>Send SMS</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\"><i class=\"fa fa-print pr-2\" aria-hidden=\"true\"></i>Print</button>\n                                <button type=\"button\" class=\"btn btn-success btn-sm\"><i class=\"fa fa-paper-plane pr-2\" aria-hidden=\"true\"></i>Export Excel</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\" (click)=\"downloadPDF()\"><i class=\"fa fa-file-pdf pr-2\" aria-hidden=\"true\"></i>Export Pdf</button>\n                            </div>\n                            <hr class=\"mp-4 mt-4\">\n                            <div class=\"table-responsive mt-4\">\n                                <table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">\n                                    <thead>\n                                        <tr>\n                                            <th><input type=\"checkbox\" name=\"\"></th>\n                                            <th>Id</th>\n                                            <th>Image</th>\n                                            <th>First Name</th>\n                                            <th>Last Name</th>\n                                            <th>Email</th>\n                                            <th>Mobile Number</th>\n                                            <th>Status</th>\n                                            <th>Action</th>\n                                        </tr>\n                                    </thead>\n                                    <!-- <tfoot>\n              <tr>\n                <th><input type=\"checkbox\" name=\"\"></th>\n                <th>Id</th>\n                <th>Image</th>\n                <th>First Name</th>\n                <th>Last Name</th>\n                <th>Email</th>\n                <th>Mobile Number</th>\n                <th>Status</th>\n                <th>Action</th>\n              </tr>\n            </tfoot> -->\n                                    <tbody>\n                                        <tr *ngFor=\"let rawdata of borrowerdata\">\n                                            <td><input type=\"checkbox\" #myItem (change)=\"OnCheckboxSelect(rawdata, $event)\" name=\"item-{{rawdata.id}}\"></td>\n                                            <th>{{rawdata._id}}</th>\n                                            <td><img src=\"../../../../assets/images/logo-admin.png\" /></td>\n                                            <td>{{rawdata.firstname}}</td>\n                                            <td>{{rawdata.lastname}}</td>\n                                            <td>{{rawdata.emailname}}</td>\n                                            <td>{{rawdata.phone}}</td>\n                                            <td class=\"bg-danger text-white text-center\"><a href=\"\" class=\"text-white\">{{rawdata.status}}</a></td>\n                                            <td><a routerLink=\"/borrowers/edit/{{rawdata._id}}\" class=\"btn btn-info btn-sm\">Edit</a>\n                                                <button type=\"button\" (click)=\"deleteborrowers(rawdata._id)\" class=\"btn btn-info btn-sm\"><i class=\"fas fa-trash\" style=\"font-size:24px;color:red;display:inline-block;\"></i></button></td>\n                                        </tr>\n                                    </tbody>\n                                </table>\n                            </div>\n                        </div>\n                    </div>\n\n                </div>\n            </div>\n\n\n\n\n\n\n        </div>\n        <!-- /.container-fluid -->\n\n    </div>\n</div>";
     /***/
   },
 
@@ -25094,6 +25325,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return this.apiService.get("/borrowers");
         }
       }, {
+        key: "getborrowersdetails",
+        value: function getborrowersdetails(id) {
+          return this.apiService.get("/borrowers/" + id);
+        }
+      }, {
+        key: "updateborrowersdetails",
+        value: function updateborrowersdetails(id, data) {
+          return this.apiService.put("/borrowers/" + id, data);
+        }
+      }, {
         key: "createborrowers",
         value: function createborrowers(data) {
           return this.apiService.post("/borrowers", data);
@@ -25101,7 +25342,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "deleteborrowers",
         value: function deleteborrowers(id) {
-          return this.apiService.post("/borrowers/" + id);
+          return this.apiService["delete"]("/borrowers/" + id);
         }
       }]);
 
@@ -25475,6 +25716,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.router = router;
         this.route = route;
         this.tost = tost;
+        this.imagename = "";
+        this.account = " ";
+        this.firstname = " ";
+        this.lastname = "";
+        this.emailname = "";
+        this.phone = "";
+        this.textarea = "";
+        this.textarea1 = "";
+        this.cityname = "";
+        this.statename = "";
+        this.zipcode = "";
+        this.Country = "";
+        this.comment = "";
         this.afuConfig = {
           uploadAPI: {
             url: "https://example-file-upload-api"
@@ -25484,12 +25738,71 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
       _createClass(EditComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
+        value: function ngOnInit() {
+          console.log(this.route.snapshot.params['id']);
+          this.bid = this.route.snapshot.params['id'];
+          this.getborrowers(this.bid);
+        }
       }, {
         key: "getborrowers",
-        value: function getborrowers(data) {
-          this.service.createborrowers(data).subscribe(function (res) {
+        value: function getborrowers(id) {
+          var _this93 = this;
+
+          this.service.getborrowersdetails(id).subscribe(function (res) {
+            console.log(res);
+            _this93.account = res.borrowers.account;
+            _this93.cityname = res.borrowers.cityname;
+            _this93.emailname = res.borrowers.emailname;
+            _this93.firstname = res.borrowers.firstname;
+            _this93.lastname = res.borrowers.lastname; // this.imagename = res.borrowers.imagename;
+
+            _this93.phone = res.borrowers.phone;
+            _this93.statename = res.borrowers.statename;
+            _this93.textarea = res.borrowers.textarea;
+            _this93.textarea1 = res.borrowers.textarea1;
+            _this93.zipcode = res.borrowers.zipcode; // this.disableSubmit = false;
+          }, function () {//this.disableSubmit = false;
+          });
+        }
+      }, {
+        key: "onUpdate",
+        value: function onUpdate() {
+          var _this94 = this;
+
+          console.log(this.imagename);
+          console.log(this.account);
+          console.log(this.firstname);
+          console.log(this.lastname);
+          console.log(this.phone);
+          console.log(this.emailname);
+          console.log(this.textarea);
+          console.log(this.textarea1);
+          console.log(this.cityname);
+          console.log(this.statename);
+          console.log(this.zipcode);
+          console.log(this.Country);
+          console.log(this.comment);
+          var data = {
+            "imagename": this.imagename,
+            "account": this.account,
+            "emailname": this.emailname,
+            "lastname": this.lastname,
+            "firstname": this.firstname,
+            "phone": this.phone,
+            "textarea": this.textarea,
+            "textarea1": this.textarea1,
+            "cityname": this.cityname,
+            "statename": this.statename,
+            "zipcode": this.zipcode,
+            "Country": this.Country,
+            "comment": this.comment
+          };
+          this.service.updateborrowersdetails(this.bid, data).subscribe(function (res) {
             console.log(res); // this.disableSubmit = false;
+
+            _this94.tost.success("Borrowers Updated succesfully");
+
+            _this94.router.navigate(['/borrowers/list']);
           }, function () {//this.disableSubmit = false;
           });
         }
@@ -25591,6 +25904,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ngx-toastr */
     "./node_modules/ngx-toastr/__ivy_ngcc__/fesm2015/ngx-toastr.js");
+    /* harmony import */
+
+
+    var jspdf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! jspdf */
+    "./node_modules/jspdf/dist/jspdf.es.min.js");
+    /* harmony import */
+
+
+    var jspdf_html2canvas__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! jspdf-html2canvas */
+    "./node_modules/jspdf-html2canvas/dist/js-pdf.min.js");
+    /* harmony import */
+
+
+    var jspdf_html2canvas__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(jspdf_html2canvas__WEBPACK_IMPORTED_MODULE_6__);
 
     var ListborrowersComponent = /*#__PURE__*/function () {
       function ListborrowersComponent(service, http, tostr) {
@@ -25603,6 +25932,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
 
       _createClass(ListborrowersComponent, [{
+        key: "downloadPDF",
+        value: function downloadPDF() {
+          alert('sssssssss');
+          var element = document.getElementById('dataTable');
+          jspdf_html2canvas__WEBPACK_IMPORTED_MODULE_6___default()(element).then(function (canvas) {
+            console.log(canvas);
+            var imgData = canvas.getContext('text');
+            var doc = new jspdf__WEBPACK_IMPORTED_MODULE_5__["jsPDF"]();
+            doc.text(imgData, 10, 10);
+            doc.save("a4.pdf");
+          });
+        }
+      }, {
         key: "OnCheckboxSelect",
         value: function OnCheckboxSelect(id, event) {
           if (event.target.checked === true) {
@@ -25631,23 +25973,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getborrowers",
         value: function getborrowers() {
-          var _this93 = this;
+          var _this95 = this;
 
           this.service.getborrowers().subscribe(function (res) {
             console.log(res);
-            _this93.borrowerdata = res['borrowers']; // this.disableSubmit = false;
+            _this95.borrowerdata = res['borrowers']; // this.disableSubmit = false;
           }, function () {//this.disableSubmit = false;
           });
         }
       }, {
         key: "deleteborrowers",
         value: function deleteborrowers(id) {
-          var _this94 = this;
+          var _this96 = this;
 
           this.service.deleteborrowers(id).subscribe(function (res) {
             console.log(res);
 
-            _this94.getborrowers();
+            _this96.getborrowers();
           }, function () {//this.disableSubmit = false;
           });
           console.log(id);

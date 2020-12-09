@@ -47235,11 +47235,11 @@ const routes = [
             },
             {
                 path: 'borrowers',
-                loadChildren: () => __webpack_require__.e(/*! import() | borrowers-borrowers-module */ "borrowers-borrowers-module").then(__webpack_require__.bind(null, /*! ./borrowers/borrowers.module */ "./src/app/layout/borrowers/borrowers.module.ts")).then((m) => m.BorrowersModule)
+                loadChildren: () => Promise.all(/*! import() | borrowers-borrowers-module */[__webpack_require__.e("default~borrowers-borrowers-module~emailpanel-emailpanel-module"), __webpack_require__.e("borrowers-borrowers-module")]).then(__webpack_require__.bind(null, /*! ./borrowers/borrowers.module */ "./src/app/layout/borrowers/borrowers.module.ts")).then((m) => m.BorrowersModule)
             },
             {
                 path: 'email-panel',
-                loadChildren: () => __webpack_require__.e(/*! import() | emailpanel-emailpanel-module */ "emailpanel-emailpanel-module").then(__webpack_require__.bind(null, /*! ./emailpanel/emailpanel.module */ "./src/app/layout/emailpanel/emailpanel.module.ts")).then((m) => m.EmailpanelModule)
+                loadChildren: () => Promise.all(/*! import() | emailpanel-emailpanel-module */[__webpack_require__.e("default~borrowers-borrowers-module~emailpanel-emailpanel-module"), __webpack_require__.e("emailpanel-emailpanel-module")]).then(__webpack_require__.bind(null, /*! ./emailpanel/emailpanel.module */ "./src/app/layout/emailpanel/emailpanel.module.ts")).then((m) => m.EmailpanelModule)
             },
             {
                 path: 'mywallet',

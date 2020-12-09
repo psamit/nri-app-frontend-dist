@@ -778,7 +778,7 @@ module.exports = exported;
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** multi ./node_modules/@angular/material/prebuilt-themes/indigo-pink.css ./node_modules/font-awesome/css/font-awesome.css ./node_modules/primeicons/primeicons.css ./node_modules/primeng/resources/themes/nova-light/theme.css ./node_modules/primeng/resources/primeng.min.css ./node_modules/ngx-toastr/toastr.css ./src/styles/app.scss ./node_modules/@fortawesome/fontawesome-free/css/all.min.css ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -797,5 +797,5 @@ module.exports = __webpack_require__(/*! C:\shivendra\gweb\web\node_modules\@for
 
 /***/ })
 
-},[[3,"runtime"]]]);
+},[[6,"runtime"]]]);
 //# sourceMappingURL=styles-es2015.js.map

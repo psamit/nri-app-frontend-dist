@@ -10218,7 +10218,7 @@ global.Buffer = global.Buffer || __webpack_require__(/*! buffer */ "./node_modul
 
 /***/ }),
 
-/***/ 2:
+/***/ 5:
 /*!***************************************************************************************************************************!*\
   !*** multi ./src/polyfills.ts ./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js ***!
   \***************************************************************************************************************************/
@@ -10231,5 +10231,5 @@ module.exports = __webpack_require__(/*! C:\shivendra\gweb\web\node_modules\@ang
 
 /***/ })
 
-},[[2,"runtime"]]]);
+},[[5,"runtime"]]]);
 //# sourceMappingURL=polyfills-es2015.js.map
